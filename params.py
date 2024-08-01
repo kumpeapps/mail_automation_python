@@ -17,9 +17,6 @@ creds = infisical_api(
 class Params:
     """Parameters"""
 
-    base_url = creds.get_secret(  # pylint: disable=no-member
-        "URL", environment=app_env, path="/WEB/"
-    ).secretValue
     app_env = os.getenv("APP_ENV")
 
     def log_level():  # pylint: disable=no-method-argument
