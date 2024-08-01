@@ -4,14 +4,14 @@ import logging
 from params import Params
 
 logging.basicConfig(
-    filename="/var/log/mail_automation_python.log",
+    filename="mail_automation_python.log",
     filemode="a",
     format="%(asctime)s: [%(name)s] [%(levelname)s] %(message)s",
     level=Params.log_level(),
 )
 logger = logging.getLogger("cart")
 full_msg = sys.stdin.readlines()
-logger.debug("test")
+logger.error("test")
 logger.debug(full_msg)
 
 # msg = email.message_from_string(full_msg.join())
