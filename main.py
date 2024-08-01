@@ -11,6 +11,7 @@ logging.basicConfig(
 )
 logger = logging.getLogger("cart")
 full_msg = sys.stdin.readlines()
+logger.debug("test")
 logger.debug(full_msg)
 
 # msg = email.message_from_string(full_msg.join())
