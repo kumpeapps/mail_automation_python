@@ -13,7 +13,7 @@ logger = logging.getLogger("message")
 full_msg = sys.stdin.readlines()
 # logger.debug(full_msg)
 
-msg = email.message_from_string(full_msg.join())
+msg = email.message_from_string(full_msg)
 
 to = msg['to']
 from_email = msg['from']
