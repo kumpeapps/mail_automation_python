@@ -18,7 +18,7 @@ for line in sys.stdin:
 msg = email.message_from_string(full_msg)
 
 to = msg['to']
-fromwho = msg['from']
+from_email = msg['from']
 subject = msg['subject']
 
 #make an emty variable for email body
