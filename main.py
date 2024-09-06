@@ -10,15 +10,28 @@ logging.basicConfig(
     level=Params.log_level(),
 )
 logger = logging.getLogger("message")
-full_msg = sys.stdin.readlines()
-# logger.debug(full_msg)
+
+full_msg = ''
+for line in sys.stdin:
+    full_msg += line
 
 msg = email.message_from_string(full_msg)
 
 to = msg['to']
-from_email = msg['from']
+fromwho = msg['from']
 subject = msg['subject']
-body = msg['body']
+
+#make an emty variable for email body
+body = ""
+
+#if the message contains attaachments find the body attachment
+#if not find the entire emial body
+if msg.is_multipart():
+    for payload in msg.get_payload():
+    # if payload.is_multipart(): …
+        body = payload.get_payload()
+else:
+    body = msg.get_payload()
 
 
 
