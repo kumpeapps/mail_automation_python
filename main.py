@@ -11,7 +11,7 @@ logging.basicConfig(
 )
 logger = logging.getLogger("message")
 full_msg = sys.stdin.readlines()
-logger.debug(full_msg)
+# logger.debug(full_msg)
 
 msg = email.message_from_string(full_msg.join())
 
