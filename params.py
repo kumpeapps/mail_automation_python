@@ -64,7 +64,7 @@ class Params:
             }
 
     class Web:
-        """Pushover API Parameters"""
+        """API Parameters"""
 
         ka_api_key = creds.get_secret(  # pylint: disable=no-member
             secret_name="KA_API_KEY", environment=app_env, path="/WEB/"
