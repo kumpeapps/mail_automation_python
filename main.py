@@ -49,7 +49,7 @@ if domain == "automation.kumpeapps.com":
         logger.debug("vinelink")
         if (
             sender == "jakumpe@kumpes.com"
-            or sender == "do-not-reply@globalnotifications.com"
+            or sender == "pm_bounces@pm-bounces.globalnotifications.com"
         ):
             logger.debug("sender")
             user_info = kapi.get_user_info(extension)
