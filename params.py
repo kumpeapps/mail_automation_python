@@ -56,8 +56,8 @@ class Params:
         def dict():  # pylint: disable=no-method-argument
             """returns as dictionary"""
             return {
-                "user": Params.SQL.username,
-                "passwd": Params.SQL.password,
+                "username": Params.SQL.username,
+                "password": Params.SQL.password,
                 "host": Params.SQL.server,
                 "port": Params.SQL.port,
                 "db": Params.SQL.database,
