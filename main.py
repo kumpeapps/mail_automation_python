@@ -44,9 +44,9 @@ if domain == 'automation.kumpeapps.com':
         if sender == 'jakumpe@kumpes.com' or sender == 'do-not-reply@globalnotifications.com':
             if 'You are registered with us to receive updates about offender' in body:
                 # New Encarceration
-                logger.debug("New Encarceration")
+                logger.debug(f"New Encarceration for {extension}")
                 pass
             elif 'has been released from custody' in body:
                 # Released
-                logger.debug("Released")
+                logger.debug(f"{extension} Released")
                 pass
