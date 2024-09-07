@@ -56,11 +56,11 @@ if domain == "automation.kumpeapps.com":
             user_id = user_info["user_id"]
             if "registered" in body:
                 # New Encarceration
-                logger.debug(f"New Encarceration for {extension}")
+                logger.info(f"New Encarceration for {extension}")
                 kapi.add_access(user_id, 216, comment="Added by VineLink Bot")
             elif "released" in body:
                 # Released
-                logger.debug(f"{extension} Released")
+                logger.info((f"{extension} Released"))
                 kapi.expire_access(user_id, 216, comment="Removed by VineLink Bot")
         else:
             logger.error(f"{sender} not allowed")
