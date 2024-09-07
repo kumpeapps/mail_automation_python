@@ -3,6 +3,13 @@ import email
 import logging
 from params import Params
 
+# mail_automation_python/main.py ${sender} ${user} ${domain} ${extension}
+
+sender = sys.argv[1]
+user = sys.argv[2]
+domain = sys.argv[3]
+extension = sys.argv[4]
+
 logging.basicConfig(
     filename="/var/vmail/scripts/mail_automation_python/mail_automation_python.log",
     filemode="a",
@@ -36,4 +43,4 @@ else:
 
 
 
-logger.debug(f"To: {to}\nFrom: {from_email}\nSubject: {subject}\nBody:\n{body}")
+logger.debug(f"To: {user}\nFrom: {sender}\nDomain: {domain}\nExt: {extension}\nSubject: {subject}\nBody:\n{body}")
