@@ -38,8 +38,11 @@ else:
     body = msg.get_payload()
 
 if domain == 'automation.kumpeapps.com':
+    logger.debug("automation.kumpeapps.com")
     if to == 'vinelink':
+        logger.debug("vinelink")
         if sender == 'jakumpe@kumpes.com' or sender == 'do-not-reply@globalnotifications.com':
+            logger.debug("sender")
             if 'You are registered with us to receive updates about offender' in body:
                 # New Encarceration
                 logger.debug(f"New Encarceration for {extension}")
