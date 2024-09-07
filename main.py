@@ -43,11 +43,9 @@ if domain == 'automation.kumpeapps.com':
         logger.debug("vinelink")
         if sender == 'jakumpe@kumpes.com' or sender == 'do-not-reply@globalnotifications.com':
             logger.debug("sender")
-            if 'You are registered with us to receive updates about offender' in body:
+            if 'registered' in body:
                 # New Encarceration
                 logger.debug(f"New Encarceration for {extension}")
-                pass
-            elif 'has been released from custody' in body:
+            elif 'released' in body:
                 # Released
                 logger.debug(f"{extension} Released")
-                pass
