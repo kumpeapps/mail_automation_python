@@ -23,7 +23,6 @@ for line in sys.stdin:
     full_msg += line
 
 msg = email.message_from_string(full_msg)
-logger.debug(msg)
 subject = msg['subject']
 
 #make an emty variable for email body
@@ -40,7 +39,6 @@ else:
 
 if domain == 'automation.kumpeapps.com':
     if to == 'vinelink':
-        logger = logging.getLogger("vinelink")
         if sender == 'jakumpe@kumpes.com' or sender == 'do-not-reply@globalnotifications.com':
             if 'You are registered with us to receive updates about offender' in body:
                 # New Encarceration
