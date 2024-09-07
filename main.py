@@ -6,7 +6,7 @@ from params import Params
 # mail_automation_python/main.py ${sender} ${user} ${domain} ${extension}
 
 sender = sys.argv[1]
-user = sys.argv[2]
+to = sys.argv[2]
 domain = sys.argv[3]
 extension = sys.argv[4]
 
@@ -24,9 +24,6 @@ for line in sys.stdin:
 
 msg = email.message_from_string(full_msg)
 logger.debug(msg)
-
-to = msg['to']
-from_email = msg['from']
 subject = msg['subject']
 
 #make an emty variable for email body
@@ -41,6 +38,15 @@ if msg.is_multipart():
 else:
     body = msg.get_payload()
 
-
-
-logger.debug(f"To: {user}\nFrom: {sender}\nDomain: {domain}\nExt: {extension}\nSubject: {subject}\nBody:\n{body}")
+if domain == 'automation.kumpeapps.com':
+    if to == 'vinelink':
+        logger = logging.getLogger("vinelink")
+        if sender == 'jakumpe@kumpes.com' or sender == 'do-not-reply@globalnotifications.com':
+            if 'You are registered with us to receive updates about offender' in body:
+                # New Encarceration
+                logger.debug("New Encarceration")
+                pass
+            elif 'has been released from custody' in body:
+                # Released
+                logger.debug("Released")
+                pass
