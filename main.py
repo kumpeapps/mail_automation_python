@@ -62,3 +62,5 @@ if domain == "automation.kumpeapps.com":
                 # Released
                 logger.debug(f"{extension} Released")
                 kapi.expire_access(user_id, 216, comment="Removed by VineLink Bot")
+        else:
+            logger.error(f"{sender} not allowed")
