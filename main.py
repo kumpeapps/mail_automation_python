@@ -38,8 +38,10 @@ else:
     body = msg.get_payload()
 
 if domain == 'automation.kumpeapps.com':
+    logger = logging.getLogger("automation")
     logger.debug("automation.kumpeapps.com")
     if to == 'vinelink':
+        logger = logging.getLogger("vinelink")
         logger.debug("vinelink")
         if sender == 'jakumpe@kumpes.com' or sender == 'do-not-reply@globalnotifications.com':
             logger.debug("sender")
